@@ -1,23 +1,17 @@
 def sort_second(dict):
     return dict[1]
 
-def get_book_text(filepath):
-    with open(filepath) as f:
-        file_contents = f.read()
-    return file_contents
-
-def get_number_of_words():
-    book_contents = get_book_text("books/frankenstein.txt")
+def get_number_of_words(book):
     num_words = 0
-    for word in book_contents.split():
+    for word in book.split():
         num_words += 1
     return num_words
 
-def get_char_count():
-    book_contents = (get_book_text("books/frankenstein.txt")).lower()
+def get_char_count(book):
+    book_lower = book.lower()
     char_dict = {}
     char_count = 1
-    for char in book_contents:
+    for char in book_lower:
         if char in char_dict:
             char_dict[char] += char_count
         else:
