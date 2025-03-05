@@ -1,3 +1,6 @@
+def sort_second(dict):
+    return dict[1]
+
 def get_book_text(filepath):
     with open(filepath) as f:
         file_contents = f.read()
@@ -20,3 +23,10 @@ def get_char_count():
         else:
             char_dict[char] = char_count
     return char_dict 
+
+def sort_dict(dict):
+    char_list = list(dict.items())
+    char_list.sort(reverse=True, key=sort_second)
+    return char_list
+
+print(sort_dict(get_char_count()))
