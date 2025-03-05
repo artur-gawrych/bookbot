@@ -24,9 +24,7 @@ def get_char_count():
             char_dict[char] = char_count
     return char_dict 
 
-def sort_dict(dict):
+def get_sorted_chars(dict):
     char_list = list(dict.items())
     char_list.sort(reverse=True, key=sort_second)
     return char_list
-
-print(sort_dict(get_char_count()))
